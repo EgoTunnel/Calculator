@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Calculator</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <h1>My First Calculator</h1>
+    </div>
+    <div id="display"></div>
+    <div id="calculator">
+        <div id="nums">
+            <button class="num" id="one">1</button>
+            <button class="num" id="two">2</button>
+            <button class="num" id="three">3</button>
+            <button class="num" id="four">4</button>
+            <button class="num" id="five">5</button>
+            <button class="num" id="six">6</button>
+            <button class="num" id="seven">7</button>
+            <button class="num" id="eight">8</button>
+            <button class="num" id="nine">9</button>
+            <button class="num" id="zero">0</button>
+        </div>
+        <div id="operators">
+            <button class="operator" id="clear">C</button>
+            <button class="operator" id="add">+</button>
+            <button class="operator" id="subtract">-</button>
+            <button class="operator" id="multiply">*</button>
+            <button class="operator" id="divide">/</button>
+            <button class="operator" id="equal">=</button>
+        </div>
+    </div>
+    <script>
+        //Calculator Display set up
+
+        let display = 0;
+        document.getElementById("display").innerHTML = display;
+
+        //Variable to prevent weirdness if operator button pressed twice in a row.
+
+        let fixer = 0;
+
+        //Array in which calculations are performed.
+
+        let calculation = [0, 0, 0];
+
+        //Variable to indicate operation to be performed.
+
+        let operation = "";
+
+
+        //buttons performed 
+
+        function oneClick() {
+            fixer = 0;
+            if (typeof display == "number") {
+                display = "1"
+                document.getElementById("display").innerHTML = display;
+            } else {
+                display += "1";
+                document.getElementById("display").innerHTML = display;
+            }
+        }
+
+        function twoClick() {
+            fixer = 0;
+            if (typeof display == "number") {
+                display = "2"
+                document.getElementById("display").innerHTML = display;
+            } else {
+                display += "2";
+                document.getElementById("display").innerHTML = display;
+            }
+        }
+
+        function threeClick() {
+            fixer = 0;
+            if (typeof display == "number") {
+                display = "3"
+                document.getElementById("display").innerHTML = display;
+            } else {
+                display += "3";
+                document.getElementById("display").innerHTML = display;
+            }
+        }
+
+        function fourClick() {
+            fixer = 0;
+            if (typeof display == "number") {
+                display = "4"
+                document.getElementById("display").innerHTML = display;
+            } else {
+                display += "4";
+                document.getElementById("display").innerHTML = display;
+            }
+        }
+
+        function fiveClick() {
+            fixer = 0;
+            if (typeof display == "number") {
+                display = "5"
+                document.getElementById("display").innerHTML = display;
+            } else {
+                display += "5";
+                document.getElementById("display").innerHTML = display;
+            }
+        }
+
+        function sixClick() {
+            fixer = 0;
+            if (typeof display == "number") {
+                display = "6"
+                document.getElementById("display").innerHTML = display;
+            } else {
+                display += "6";
+                document.getElementById("display").innerHTML = display;
+            }
+        }
+
+        function sevenClick() {
+            fixer = 0;
+            if (typeof display == "number") {
+                display = "7"
+                document.getElementById("display").innerHTML = display;
+            } else {
+                display += "7";
+                document.getElementById("display").innerHTML = display;
+            }
+        }
+
+        function eightClick() {
+            fixer = 0;
+            if (typeof display == "number") {
+                display = "8"
+                document.getElementById("display").innerHTML = display;
+            } else {
+                display += "8";
+                document.getElementById("display").innerHTML = display;
+            }
+        }
+
+        function nineClick() {
+            fixer = 0;
+            if (typeof display == "number") {
+                display = "9"
+                document.getElementById("display").innerHTML = display;
+            } else {
+                display += "9";
+                document.getElementById("display").innerHTML = display;
+            }
+        }
+
+        function zeroClick() {
+            fixer = 0;
+            if (typeof display == "number") {
+                display = "0"
+                return document.getElementById("display").innerHTML = display;
+            } else {
+                display += "0";
+                document.getElementById("display").innerHTML = display;
+            }
+        }
+
+        function clearClick() {
+            fixer = 0;
+            display = 0;
+            calculation = [0, 0, 0];
+            operation = "";
+            document.getElementById("display").innerHTML = display;
+        }
+
+        function plusClick() {
+            if (fixer == 0) {
+                display = parseInt(display);
+                if (operation != "addit") {
+                    calculation[1] = display;
+                    operation = "addit";
+                    fixer = 1;
+                } else {
+                    calculation[2] = display;
+                    calculation[1] += calculation[2];
+                    calculation[2] = 0;
+                    display = calculation[1];
+                    document.getElementById('display').innerHTML = display;
+                    fixer = 1;
+                }
+            }
+        }
+
+        function minusClick() {
+            if (fixer == 0) {
+                display = parseInt(display);
+                if (operation != "subtraction") {
+                    calculation[1] = display;
+                    operation = "subtraction";
+                    fixer = 1;
+                } else {
+                    calculation[2] = display;
+                    calculation[1] -= calculation[2];
+                    calculation[2] = 0;
+                    display = calculation[1];
+                    document.getElementById('display').innerHTML = display;
+                    fixer = 1;
+                }
+            }
+        }
+
+        function multiplyClick() {
+            if (fixer == 0) {
+                display = parseInt(display);
+                if (operation != "multiply") {
+                    calculation[1] = display;
+                    operation = "multiply";
+                    fixer = 1;
+                } else {
+                    calculation[2] = display;
+                    calculation[1] *= calculation[2];
+                    calculation[2] = 0;
+                    display = calculation[1];
+                    document.getElementById('display').innerHTML = display;
+                    fixer = 1;
+                }
+            }
+        }
+
+        function divideClick() {
+            if (fixer == 0) {
+                display = parseInt(display);
+                if (operation != "divide") {
+                    calculation[1] = display;
+                    operation = "divide";
+                    fixer = 1;
+                } else {
+                    calculation[2] = display;
+                    calculation[1] /= calculation[2];
+                    calculation[2] = 0;
+                    display = calculation[1];
+                    document.getElementById('display').innerHTML = display;
+                    fixer = 1;
+                }
+            }
+        }
+
+        function equalClick() {
+            fixer = 0;
+            switch (operation) {
+                case "addit":
+                    display = parseInt(display);
+                    calculation[2] = display;
+                    calculation[0] = calculation[1] + calculation[2];
+                    display = calculation[0];
+                    document.getElementById('display').innerHTML = display;
+                    calculation = [0, 0, 0];
+                    operation = "";
+                    fixer = 0;
+                    break;
+                case "subtraction":
+                    display = parseInt(display);
+                    calculation[2] = display;
+                    calculation[0] = calculation[1] - calculation[2];
+                    display = calculation[0];
+                    document.getElementById('display').innerHTML = display;
+                    calculation = [0, 0, 0];
+                    operation = "";
+                    fixer = 0;
+                    break;
+                case "multiply":
+                    display = parseInt(display);
+                    calculation[2] = display;
+                    calculation[0] = calculation[1] * calculation[2];
+                    display = calculation[0];
+                    document.getElementById('display').innerHTML = display;
+                    calculation = [0, 0, 0];
+                    operation = "";
+                    fixer = 0;
+                    break;
+                case "divide":
+                    display = parseInt(display);
+                    calculation[2] = display;
+                    calculation[0] = calculation[1] / calculation[2];
+                    display = calculation[0];
+                    document.getElementById('display').innerHTML = display;
+                    calculation = [0, 0, 0];
+                    operation = "";
+                    fixer = 0;
+                    break;
+            }
+        }
+
+        document.getElementById("one").onclick = oneClick;
+        document.getElementById("two").onclick = twoClick;
+        document.getElementById("three").onclick = threeClick;
+        document.getElementById("four").onclick = fourClick;
+        document.getElementById("five").onclick = fiveClick;
+        document.getElementById("six").onclick = sixClick;
+        document.getElementById("seven").onclick = sevenClick;
+        document.getElementById("eight").onclick = eightClick;
+        document.getElementById("nine").onclick = nineClick;
+        document.getElementById("zero").onclick = zeroClick;
+        document.getElementById("clear").onclick = clearClick;
+        document.getElementById("add").onclick = plusClick;
+        document.getElementById("subtract").onclick = minusClick;
+        document.getElementById("multiply").onclick = multiplyClick;
+        document.getElementById("divide").onclick = divideClick;
+        document.getElementById("equal").onclick = equalClick;
+    </script>
+</body>
+
+</html>
