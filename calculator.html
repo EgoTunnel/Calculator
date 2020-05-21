@@ -2,12 +2,107 @@
 <html>
 
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Calculator</title>
     <style>
-
+        body {
+            font-size: 20px;
+        }
+        
+        h1 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+        
+        .title {
+            text-align: center;
+        }
+        
+        #calculatoroutside {
+            border: solid thick;
+            max-width: 40%;
+            margin: 10px auto;
+            background-color: rgb(71, 78, 95);
+        }
+        
+        #calculatorcontainer {
+            border: solid black thin;
+            max-width: 90%;
+            margin: 10px auto;
+            padding-left: 0px;
+        }
+        
+        #displaycontainer {
+            border: solid thick;
+        }
+        
+        #display {
+            text-align: center;
+            font-size: 40px;
+            font-family: 'Press Start 2P', cursive;
+            background-color: greenyellow
+        }
+        
+        #calculator {
+            margin: 10px 2px 2px 2px;
+            display: flex;
+            background-color: white;
+        }
+        
+        button {
+            margin: 1px;
+            cursor: pointer;
+            font-size: 30px;
+            border: groove thin;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        
+        button:hover,
+        #equal:hover,
+        #clear:hover {
+            color: white;
+            background-color: black;
+        }
+        
+        button:active,
+        #equal:active,
+        #clear:active {
+            background-color: rgb(21, 21, 160);
+        }
+        
+        #nums {
+            width: 75%;
+            display: grid;
+            grid-template-areas: "one two three" "four five six" "seven eight nine" "clear zero equal";
+        }
+        
+        .num {
+            padding: 5px 10px 5px 10px;
+        }
+        
+        #equal {
+            background-color: forestgreen;
+            color: white;
+        }
+        
+        #clear {
+            background-color: rgb(156, 5, 5);
+            color: white;
+        }
+        
+        #operators {
+            margin: 0 auto;
+        }
+        
+        .operator {
+            width: 100%;
+            padding: 5px 10px 5px 10px;
+            background-color: rebeccapurple;
+            color: whitesmoke;
+            border: solid black thin;
+        }
     </style>
 </head>
 
@@ -15,27 +110,34 @@
     <div class="title">
         <h1>My First Calculator</h1>
     </div>
-    <div id="display"></div>
-    <div id="calculator">
-        <div id="nums">
-            <button class="num" id="one">1</button>
-            <button class="num" id="two">2</button>
-            <button class="num" id="three">3</button>
-            <button class="num" id="four">4</button>
-            <button class="num" id="five">5</button>
-            <button class="num" id="six">6</button>
-            <button class="num" id="seven">7</button>
-            <button class="num" id="eight">8</button>
-            <button class="num" id="nine">9</button>
-            <button class="num" id="zero">0</button>
-        </div>
-        <div id="operators">
-            <button class="operator" id="clear">C</button>
-            <button class="operator" id="add">+</button>
-            <button class="operator" id="subtract">-</button>
-            <button class="operator" id="multiply">*</button>
-            <button class="operator" id="divide">/</button>
-            <button class="operator" id="equal">=</button>
+    <div id="calculatoroutside">
+        <div id="calculatorcontainer">
+            <div id="displaycontainer">
+                <div id="display"></div>
+            </div>
+            <div id="calculator">
+                <div id="nums">
+                    <button class="num" id="one">1</button>
+                    <button class="num" id="two">2</button>
+                    <button class="num" id="three">3</button>
+                    <button class="num" id="four">4</button>
+                    <button class="num" id="five">5</button>
+                    <button class="num" id="six">6</button>
+                    <button class="num" id="seven">7</button>
+                    <button class="num" id="eight">8</button>
+                    <button class="num" id="nine">9</button>
+                    <button class="num" id="clear">C</button>
+                    <button class="num" id="zero">0</button>
+                    <button class="num" id="equal">=</button>
+                </div>
+                <div id="operators">
+                    <button class="operator" id="add">+</button>
+                    <button class="operator" id="subtract">-</button>
+                    <button class="operator" id="multiply">*</button>
+                    <button class="operator" id="divide">/</button>
+                </div>
+
+            </div>
         </div>
     </div>
     <script>
